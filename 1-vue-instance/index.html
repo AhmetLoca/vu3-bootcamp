@@ -10,8 +10,21 @@
 </head>
 <body>
     <div id="app">
-        <!--string interpolation!-->
-        <h1>{{title}}</h1>
+
+        <h4>{{title}}</h4>
+        <h3>{{description}}</h3>
+        <p>{{description}}</p>
+        <p>{{content}}</p>
+        <!-- href bir attribute, v-bind bir directivedir.
+             href degeri dinamik olarak vue.js'den gelecek.
+             attribute bind etmek(dinamikleşmek) için kullanılır. !-->
+       
+        <a :target="context.target" :href="context.url">{{context.title}}</a>
+
+        <button @click="changeTitle('bu 1.buton')">Click</button>
+        <button @click="changeTitle('bu 2.buton')">Click2</button>
+
     </div>
+    <script src="app.js"></script>
 </body>
 </html>
