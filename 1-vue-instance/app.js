@@ -5,6 +5,10 @@ const app = Vue.createApp({
       description: "selam",
       content: "Lorem ipsum dolor sit amet...",
       url: "https://www.google.com",
+      coords: {
+        x: 0,
+        y: 0,
+      },
 
       context: {
         title: "ahmetloca",
@@ -17,6 +21,13 @@ const app = Vue.createApp({
     changeTitle(title) {
       // bu vue instance'indaki title'la erismek için "this" kullanacagım.
       this.title = title;
+    },
+    updateCoords(message, event) {
+      console.log(message, event);
+      this.coords = {
+        x: event.x,
+        y: event.y,
+      };
     },
   },
 }).mount("#app");

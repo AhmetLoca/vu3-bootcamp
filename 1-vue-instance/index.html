@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="app">
@@ -18,12 +18,13 @@
         <!-- href bir attribute, v-bind bir directivedir.
              href degeri dinamik olarak vue.js'den gelecek.
              attribute bind etmek(dinamikleşmek) için kullanılır. !-->
-       
         <a :target="context.target" :href="context.url">{{context.title}}</a>
 
         <button @click="changeTitle('bu 1.buton')">Click</button>
         <button @click="changeTitle('bu 2.buton')">Click2</button>
 
+        <div @mousemove="updateCoords('mouseMovee',$event)" class="box" @click="changeTitle('Box üzerinden gelen')"></div>
+        <span>{{coords.x}},{{coords.y}}</span>
     </div>
     <script src="app.js"></script>
 </body>
