@@ -1,0 +1,20 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: #dedede;
+}
+
+.border {
+  border: 3px dashed #666;
+}
+
+.red {
+  background-color: red;
+}
