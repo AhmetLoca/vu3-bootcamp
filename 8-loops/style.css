@@ -1,0 +1,10 @@
+.completed-item {
+  background-color: green;
+}
+.uncompleted-item {
+  background-color: red;
+}
+
+ul {
+  list-style: none;
+}
