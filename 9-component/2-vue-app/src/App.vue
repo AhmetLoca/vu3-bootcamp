@@ -2,9 +2,9 @@
   <div class="container">
     <h3 class="text-center">Todo app</h3>
     <hr class="my-2" />
-    <AddSection />
+    <AddSection @add-todo="addNewTodo" />
     <TodoList :todoList="todoList" />
-    <ResultBar />
+    <ResultBar :itemCount="todoList.length" />
   </div>
 </template>
 
@@ -27,7 +27,6 @@ export default {
         { id: 3, text: "dev.loca3" },
         { id: 4, text: "dev.loca4" },
         { id: 4, text: "dev.loca5" },
-      
       ],
     };
   },
@@ -48,13 +47,16 @@ export default {
       }
       */
     },
-    addNewTodo(event) {
-      //console.log(event.target.value);
+    addNewTodo(todo) {
+      console.log("event", todo);
       this.todoList.push({
         id: Date.now(),
-        text: event.target.value,
+        text: todo,
       });
-      event.target.value = "";
+    },
+    /* siz yukarıda parantez yazmazsanız default olarak yukarıya event data'yi gönderir.*/
+    testEvent(data) {
+      alert(data);
     },
   },
 };
