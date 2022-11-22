@@ -2,32 +2,37 @@
   <div class="container">
     <h3 class="text-center">Todo app</h3>
     <hr class="my-2" />
-    <AddSection @add-todo="addNewTodo" />
-    <TodoList :todoList="todoList" />
-    <ResultBar :itemCount="todoList.length" />
+    <AddSection :addNewTodo="addNewTodo" @add-todo="addNewTodo" />
+    <ListSection />
   </div>
 </template>
 
 <script>
 import AddSection from "@/components/AddSection.vue";
-import TodoList from "@/components/TodoList.vue";
-import ResultBar from "@/components/ResultBar.vue";
+import ListSection from "@/components/ListSection.vue";
 
 export default {
   components: {
     AddSection,
-    TodoList,
-    ResultBar,
+    ListSection,
   },
   data() {
     return {
-      todoList: [
-        { id: 1, text: "dev.loca1" },
-        { id: 2, text: "dev.loca2" },
-        { id: 3, text: "dev.loca3" },
-        { id: 4, text: "dev.loca4" },
-        { id: 4, text: "dev.loca5" },
-      ],
+      provideData: {
+        todoList: [
+          { id: 1, text: "dev.loca1" },
+          { id: 2, text: "dev.loca2" },
+          { id: 3, text: "dev.loca3" },
+          { id: 4, text: "dev.loca4" },
+          { id: 4, text: "dev.loca5" },
+        ],
+      },
+    };
+  },
+  provide() {
+    return {
+      provideData: this.provideData,
+      deleteItem: this.deleteItem,
     };
   },
   methods: {
@@ -39,7 +44,9 @@ export default {
       todoList.filter içerisinde bana gelen arkadastan farklı olacak
       */
 
-      this.todoList = this.todoList.filter((t) => t !== todo);
+      this.provideData.todoList = this.provideData.todoList.filter(
+        (t) => t !== todo
+      );
 
       /*   const matchedIndex = this.todoList.findIndex((i) => i === todo);
       if (matchedIndex > -1) {
@@ -49,7 +56,7 @@ export default {
     },
     addNewTodo(todo) {
       console.log("event", todo);
-      this.todoList.push({
+      this.provideData.todoList.push({
         id: Date.now(),
         text: todo,
       });
