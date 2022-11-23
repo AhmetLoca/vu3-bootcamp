@@ -11,18 +11,20 @@
 </head>
 <body>
     <div id="app">
-        <button class="btn btn-sm btn-primary" @click="showContainer = !showContainer">Open / Close</button>
-        <h1 v-if="!showContainer" class="text-danger">Başlangiçta gözükecek.</h1>
-        <h1 v-else="showContainer" class="text-primary">Sonra gözükecek.</h1>
-
+        
+        <!-- <button @click="onOffContainer" :class="buttonOpenClose">Open / Close</button>
+        <p v-if="!showContainer" :class="">It will see first.</p>
+        <p v-else="showContainer" :class="">It will see later.</p> -->
         <hr>
+      
+        <h3 :class="colorCounter">{{counter}}</h3>
+        <button @click="increase" class="btn btn-sm btn-success">Inc</button>
+        <button @click="decrease" class="btn btn-sm btn-danger">Dec</button>
+        <p v-if="counter > 0">Counter: Positive</p>
+        <p v-else-if="counter < 0">Counter: Negative</p>
+        <p v-else>Counter: 0</p>
+        
 
-        <h3 :class="counterBoxClass">{{counter}}</h3>
-        <button class="btn btn-sm btn-success" @click="counter++">Inc</button>
-        <button class="btn btn-sm btn-danger" @click="counter--">Dec</button>
-        <p v-if="counter < 0"> Counter Negatif</p>
-        <p v-else-if="counter > 0"> Counter Pozitif</p>
-        <p v-else> Counter 0</p>
 
     </div>
     <script src="app.js"></script>
