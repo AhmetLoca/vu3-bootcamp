@@ -9,12 +9,9 @@ body {
   width: 100px;
   height: 100px;
   background-color: #dedede;
+  
 }
 
 .border {
   border: 3px dashed #666;
-}
-
-.red {
-  background-color: red;
 }

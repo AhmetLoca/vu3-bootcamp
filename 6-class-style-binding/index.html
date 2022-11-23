@@ -10,12 +10,20 @@
 </head>
 <body>
     <div id="app">
-       <input type="text" v-model="bgColor" />
-       {{bgColor}}
-      <button @click="showBorder = !showBorder">Add border / Not add border</button>
-      <button @click="redBG = !redBG">Make red</button>
-      <div :style="{backgroundColor : bgColor}" class="box" :class="boxClasses"></div>
-    </div>
+        <input type="text">
+        <button @click="addBorder">On / Off</button>
+        <div class="box" :class="boxClasses"></div>
+        <!-- buradaki boxClasses şöyle çalışıyor : 
+             data'nin içerisindeki state'i function olarak calistiriyor.
+        !-->
+    </div> 
     <script src="app.js"></script>
 </body>
 </html>
+
+
+<!--
+  <input type="text" v-model="bgColor" />
+      <button @click="showBorder = !showBorder">On / Off</button>
+      <div :style="{background : bgColor}" class="box" :class="boxClasses"></div>
+!-->

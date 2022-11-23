@@ -2,12 +2,16 @@ const app = Vue.createApp({
   data() {
     return {
       showBorder: false,
-      bgColor: "",
     };
+  },
+  methods: {
+    addBorder() {
+      this.showBorder = !this.showBorder;
+    },
   },
   computed: {
     boxClasses() {
-      return { border: this.showBorder, red: this.redBG };
+      return { border: this.showBorder };
     },
   },
 });
