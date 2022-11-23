@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Life Cycle Hooks</title>
+    <title>Class Style Binding</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="app">
-        <input type="text">
-        <button @click="addBorder">On / Off</button>
-        <div class="box" :class="boxClasses"></div>
+        <button @click="onOffBorder">On / Off</button>
+        <div class="box" :style="{background: this.bgColor}" :class="addBorder"></div>
+            <input type="text" v-model="bgColor">
+
         <!-- buradaki boxClasses şöyle çalışıyor : 
              data'nin içerisindeki state'i function olarak calistiriyor.
         !-->
@@ -20,10 +21,3 @@
     <script src="app.js"></script>
 </body>
 </html>
-
-
-<!--
-  <input type="text" v-model="bgColor" />
-      <button @click="showBorder = !showBorder">On / Off</button>
-      <div :style="{background : bgColor}" class="box" :class="boxClasses"></div>
-!-->

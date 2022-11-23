@@ -1,17 +1,18 @@
 const app = Vue.createApp({
   data() {
     return {
-      showBorder: false,
+      stateBorder: false,
+      bgColor: null,
     };
   },
   methods: {
-    addBorder() {
-      this.showBorder = !this.showBorder;
+    onOffBorder() {
+      this.stateBorder = !this.stateBorder;
     },
   },
   computed: {
-    boxClasses() {
-      return { border: this.showBorder };
+    addBorder() {
+      return { border: this.stateBorder };
     },
   },
 });

@@ -4,12 +4,28 @@ body {
   align-items: center;
   padding: 10px;
 }
+input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  height: 30px;
+  border-radius: 25px;
+}
+
+#app {
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
 
 .box {
   width: 100px;
   height: 100px;
   background-color: #dedede;
-  
+  margin-top: 20px;
 }
 
 .border {
