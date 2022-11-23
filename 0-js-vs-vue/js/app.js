@@ -1,10 +1,10 @@
-const todoInput = document.querySelector("#todoInput");
-const addTodo = document.querySelector("#addTodo");
-const todoList = document.querySelector("#todoList");
+const todoInput = document.querySelector("#todoInput"); //input
+const addTodo = document.querySelector("#addTodo"); //button
+const todoList = document.querySelector("#todoList"); // ul
 
 addTodo.addEventListener("click", () => {
-  const listItem = document.createElement("li");
-  listItem.textContent = todoInput.value;
-
-  todoList.append(listItem);
+  //butona click olunca
+  const listItem = document.createElement("li"); // li olustur
+  listItem.textContent = todoInput.value; // input içerisindeki degeri li'ye ata
+  todoList.append(listItem); //ul içerisine li'i append et
 });
