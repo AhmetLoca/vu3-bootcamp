@@ -1,8 +1,19 @@
 .completed-item {
-  background-color: green;
+  background-color: rebeccapurple;
+  margin: 10px;
+  border-radius: 20px;
+  height: 30px;
+  display: flex;
+  align-items: center;
 }
 .uncompleted-item {
-  background-color: red;
+  background-color: orangered;
+  margin: 10px;
+  border-radius: 20px;
+  height: 30px;
+  display: flex;
+
+  align-items: center;
 }
 
 ul {

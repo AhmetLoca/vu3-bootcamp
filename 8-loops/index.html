@@ -4,28 +4,20 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
   <link rel="stylesheet" href="style.css">
-
   <body>
     <div id="app">
-   <h3>Todo List</h3>
-    <input type="text" @keydown.enter="addTodo">
-      <div v-if="todoList.length > 0">       
-            <ul>
-            <li v-for="todo in todoList" :key="todo.id" :class="{'completed-item' : todo.completed, 'uncompleted-item' : !todo.completed}">
-               <div>
-                 <input type="checkbox" v-model="todo.completed" :id="`${todo.id}`" />
-                 <label :for="`${todo.id}`">{{todo.text}}</label>
-                 <button @click="removeItem(todo)">Sil</button>
-               </div>
-            </li>
-        </ul>
-       <div>
-        <small>Done: {{ completedItemCount}}</small>
-        <small>Not done : {{ unCompletedItemCount}}</small>
-       </div>
-    </div>
-    <div v-else>Henüz eklenmiş bir todo bulunmamaktadir.</div>
-       <div><pre>{{todoList}}</pre></div>
+      <h4>Todo List</h4>
+      <input type="text" @keydown.enter="addTodo">
+      <ul>
+        <li v-for="todo in todoList" :key="todo.id" :class="{'completed-item':todo.completed,'uncompleted-item':!todo.completed}">
+        <div>
+          <input type="checkbox" v-model="todo.completed" >
+          <label for="">{{todo.text}}</label>
+          <button @click="removeItem(todo)">Sil</button>
+        </div>
+       </li>
+      </ul>
+      <div><pre>{{todoList}}</pre></div>
     </div>
     <script src="app.js"></script>
 </body>
