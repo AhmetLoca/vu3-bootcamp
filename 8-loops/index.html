@@ -6,19 +6,36 @@
   <link rel="stylesheet" href="style.css">
   <body>
     <div id="app">
-      <h3>Todo List</h3>
-      <input type="text" @keydown.enter="addTodo">
+      <p class="title">Daily To Do List</p>
+
+      <!--input and button!-->
+      <label>
+        <input type="text" placeholder="Add new list item" @keydown.enter="addTodo" v-model="inputText">
+        <button class="add" @click="addTodo">Add</button>
+      </label>
+
+    <div class="container">
       <ul>
         <li v-for="todo in todoList" :key="todo.id" :class="{'completed-item':todo.completed, 'uncompleted-item':!todo.completed }">
           <div class="content">
-          <input type="checkbox" v-model="todo.completed">
-          <label for="">{{todo.text}}</label>
-          <button @click="removeItem(todo)">Delete</button>
+            <div class="checkbox">
+              <input type="checkbox" :id="`${todo.id}`" v-model="todo.completed" />
+            </div>      
+          <label :for="`${todo.id}`">{{todo.text}}</label>
         </div>
         </li>
       </ul>
-      <div><pre>{{todoList}}</pre></div>
+
+      <hr color="#b1bacb" size="1" >
+    
+      <div class="footer">
+        <small class="gray">{{complutedItemCount}} item selected</small>
+        <small class="gray" @click="removeAll">Clear All</small>
+      </div>
+
+      </div>
     </div>
     <script src="app.js"></script>
+    <script src="https://kit.fontawesome.com/7368c40b21.js" crossorigin="anonymous"></script>
 </body>
 </html>

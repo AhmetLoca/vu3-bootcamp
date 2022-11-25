@@ -1,34 +1,123 @@
-.completed-item {
-  background-color: rebeccapurple;
-  margin: 10px;
-  border-radius: 20px;
-  height: 30px;
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins";
+}
+
+body {
   display: flex;
+  justify-content: center;
   align-items: center;
+}
+
+.container {
+  height: 200px;
+  padding: 30px;
+}
+
+.completed-item {
+  text-decoration: line-through;
+  text-decoration-color: rgb(143, 152, 168);
+  color: rgb(143, 152, 168);
 }
 
 .uncompleted-item {
-  background-color: orangered;
-  margin: 10px;
-  border-radius: 20px;
-  height: 30px;
-  display: flex;
-  align-items: center;
+  color: rgb(0, 23, 71);
 }
 
-input {
-  border-radius: 10px;
-  height: 20px;
-  weight: 20px;
+.uncompleted-item:hover {
+  color: rgb(46, 112, 253);
+}
+
+.title {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  font-size: 35px;
+  font-weight: bolder;
+}
+
+label {
+  position: relative;
+  cursor: pointer;
+  margin: 10px;
+  padding-left: 10px;
+  font-size: 13px;
+}
+
+input[type="text"] {
+  width: 500px;
+  height: 40px;
+  padding: 25px 15px;
+  border-radius: 4px;
+  border: 1px solid #eee;
+}
+
+.checkbox input {
+  position: relative;
+}
+.checkbox input::before {
+  position: absolute;
+  content: "";
+  height: 30px;
+  width: 30px;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  transition: 0.2s all ease;
+}
+.checkbox input:checked::before {
+  background-color: #00d8a7;
+}
+.checkbox input:checked::after {
+  position: absolute;
+  content: "\f00c";
+  font-family: "FontAwesome";
+  color: #fff;
+}
+.add {
+  position: absolute;
+  top: -11px;
+  bottom: 0;
+  right: 6px;
+  height: 40px;
+  border-radius: 4px;
+  background: #2e70fd;
+  color: white;
+  padding: 0 20px;
+  letter-spacing: 1.1px;
+  border: none;
+  cursor: pointer;
+}
+.gray {
+  color: rgb(177, 186, 203);
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 15px 10px;
 }
 
 .content {
   display: flex;
   align-items: center;
   padding: 3px;
-  margin: 3px;
+  margin: 0px 15px;
 }
 
 ul {
   list-style: none;
+}
+
+::placeholder {
+  color: rgb(177, 186, 203);
 }
