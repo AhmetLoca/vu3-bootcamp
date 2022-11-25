@@ -3,6 +3,7 @@ const app = Vue.createApp({
     return {
       todoText: null,
       todoList: [],
+      text: null,
     };
   },
   methods: {
@@ -11,3 +12,17 @@ const app = Vue.createApp({
     },
   },
 }).mount("#app");
+
+/*
+statelerimiz:
+      todoText: null,
+      todoList: [],
+
+
+functionlarimiz:
+
+    addTodo() {
+      this.todoList.push(this.todoText);
+    },
+
+*/

@@ -6,16 +6,16 @@
   <link rel="stylesheet" href="style.css">
   <body>
     <div id="app">
-      <h4>Todo List</h4>
+      <h3>Todo List</h3>
       <input type="text" @keydown.enter="addTodo">
       <ul>
-        <li v-for="todo in todoList" :key="todo.id" :class="{'completed-item':todo.completed,'uncompleted-item':!todo.completed}">
-        <div>
-          <input type="checkbox" v-model="todo.completed" >
+        <li v-for="todo in todoList" :key="todo.id" :class="{'completed-item':todo.completed, 'uncompleted-item':!todo.completed }">
+          <div class="content">
+          <input type="checkbox" v-model="todo.completed">
           <label for="">{{todo.text}}</label>
-          <button @click="removeItem(todo)">Sil</button>
+          <button @click="removeItem(todo)">Delete</button>
         </div>
-       </li>
+        </li>
       </ul>
       <div><pre>{{todoList}}</pre></div>
     </div>

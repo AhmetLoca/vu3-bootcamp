@@ -12,9 +12,21 @@
     <input type="text" v-model="todoText">
     <button @click="addTodo">Add</button>
     <ul>
-        <li v-for="todo in todoList" :key="todo">{{todo}}</li>
+        <li v-for="list in todoList" :key="list">{{list}}</li>
     </ul>
+    <input type="text" v-model="text">
+    {{text}}
    </div>
 <script src="app.js"></script>
 </body>
 </html>
+
+
+<!--
+     <input type="text" v-model="todoText">
+    <button @click="addTodo">Add</button>
+    <ul>
+        <li v-for="todo in todoList" :key="todo">{{todo}}</li>
+    </ul>
+    
+    !-->

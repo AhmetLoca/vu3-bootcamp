@@ -2,10 +2,10 @@ const app = Vue.createApp({
   data() {
     return {
       todoList: [
-        { id: 1, text: "List1", completed: false },
-        { id: 2, text: "List2", completed: false },
-        { id: 3, text: "List3", completed: false },
-        { id: 4, text: "List4", completed: false },
+        { id: 1, text: "Vue1", completed: false },
+        { id: 2, text: "Vue2", completed: false },
+        { id: 3, text: "Vue3", completed: false },
+        { id: 4, text: "Vue4", completed: false },
       ],
     };
   },

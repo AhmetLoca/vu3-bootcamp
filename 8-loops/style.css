@@ -6,14 +6,27 @@
   display: flex;
   align-items: center;
 }
+
 .uncompleted-item {
   background-color: orangered;
   margin: 10px;
   border-radius: 20px;
   height: 30px;
   display: flex;
-
   align-items: center;
+}
+
+input {
+  border-radius: 10px;
+  height: 20px;
+  weight: 20px;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  padding: 3px;
+  margin: 3px;
 }
 
 ul {
