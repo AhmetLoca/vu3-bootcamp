@@ -1,8 +1,10 @@
 <template>
   <div class="container">
-    <button class="red" @click="activeComponent = 'Red'">Red</button>
-    <button class="green" @click="activeComponent = 'Green'">Green</button>
-    <button class="blue" @click="activeComponent = 'Blue'">Blue</button>
+    <div class="d-flex justify-content-between align-items-center">
+      <button class="red" @click="activeComponent = 'Red'">Red</button>
+      <button class="green" @click="activeComponent = 'Green'">Green</button>
+      <button class="blue" @click="activeComponent = 'Blue'">Blue</button>
+    </div>
     <!-- <Red v-if="activeComponent == 'Red'" class="mb-2" />
          <Green v-if="activeComponent == 'Green'" class="mb-2" />
          <Blue v-if="activeComponent == 'Blue'" class="mb-2" />

@@ -11,8 +11,7 @@
       />
     </div>
     <ul v-if="itemList.length > 0">
-      <li
-        v-for="item in itemList"
+      <li v-for="item in itemList"
         :key="item.id"
         class="d-flex justify-content-between align-items-center"
       >
@@ -52,12 +51,11 @@ export default {
         completed: false,
       };
       axios.post("http://localhost:3000/items", saveObject).then((response) => {
-        console.log(response);
         this.itemList.push(response.data);
         e.target.value = "";
         e.target.focus();
       });
-    },
+   },
     onDelete(item) {
       axios
         .delete(`http://localhost:3000/items/${item.id} `)
