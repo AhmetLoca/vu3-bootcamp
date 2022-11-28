@@ -4,35 +4,41 @@
     {{ $store.state.permissions }}
     {{ $store.state.theme }}
     {{ $store.state.userList }}
- 
-  <ul>
+  <!-- <ul>
     <li v-for="permission in $store.state.permissions" :key="permission">
       {{ permission }}
     </li>
-  </ul>
+  </ul> -->
 
   <ul>
-    <li v-for="user in $store.state.userList" :key="user">
-      {{ user }}
+    <li v-for="(item,index) in woodItems" :key="index">
+      {{ item.title }}
     </li>
   </ul>
-  {{ $store.state.fullName }}
-  <button @click="updateName">FullName bilgisini değiştir..</button>
+
+  <button @click="updateName">Ekle</button>
 </p>
 </template>
 
 <script>
+import { mapGetters } from "vuex"
 export default {
   name: "App",
   created() {
-    console.log(this.$store.state.person);
-    console.log(this.$store.state.theme);
+    console.log(this.$store.state.user);
+    //console.log(this.$store.state.itemList.filter(i=> i.type === "mobilya"));
+    console.log(this.$store.getters.woodItems)
+    console.log(this.$store.getters.activeUser)
+
   },
   methods:{
   updateName(){
-    this.$store.state.fullName = Date.now()
-  }
-  }
+    //this.$store.state.itemList.push({ id: 6, title:"Raf", type:"mobilya"})
+    const userData ={id:Date.now(),title:"Raf",type:"mobilya"}
+    this.$store.dispatch("newItemActions",userData)
+    }
+  },
+  computed: mapGetters(["woodItems"])
 };
 </script>
 
