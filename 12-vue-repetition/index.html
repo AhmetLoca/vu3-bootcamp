@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js - Example </title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <input type="text" @keydown.enter="addTodo" v-model="inputText">
+    <button @click="addTodo">Add</button>
+    <div v-if="todoList.length > 0">
+      <ul>
+        <li v-for="todo in todoList" :key="todo" >
+            <input type="checkbox" id="" v-model="todo.completed">
+            <label for="" :class="{'completed-item':todo.completed}">{{todo.text}}</label>
+            <button @click="removeItem(todo)">Delete</button>
+        </li>
+      </ul>
+    </div>
+      <div>
+        <small>done :{{completedItemCount}}</small>
+        <small>not done :{{ unCompletedItemCount}}</small>
+      </div>
+      <div v-else>Henüz eklenmiş bir todo bulunamamaktadir.</div>    
+      <div><pre>{{todoList}}</pre></div>
+  </div>
+    <script src="app.js"></script>
+</body>
+</html>
