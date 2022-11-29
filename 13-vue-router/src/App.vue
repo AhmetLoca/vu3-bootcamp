@@ -1,14 +1,37 @@
 <template>
-  <router-link to="/"> Anasayfa </router-link>
-
-  <!-- sayfalar arasında geçiş yaparken sayfa yenilenmiyor.!-->
-  <router-link to="/about"> About </router-link> 
-  <!-- bu component sizin, router'inize denk gelen component'i load ettikten sonra burada gosteriyor.!-->
-  <router-view></router-view>
+  <div class="container">
+    <div class="mb-2">
+      <router-link class="nav-link" active-class="active" to="/">
+        Anasayfa
+      </router-link>
+      <router-link class="nav-link" active-class="active" to="/about">
+        About
+      </router-link>
+      <router-link class="nav-link" active-class="active" to="/details/ase">
+        Details
+      </router-link>
+    </div>
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
 export default {};
 </script>
 
-<style></style>
+<style>
+.nav-link {
+  padding: 5px 10px;
+  text-decoration: none;
+  border: 1px solid #fa6558;
+  color: #fa6558;
+  margin-right: 5px;
+  display: inline-block;
+  margin-top: 5px;
+}
+
+.active {
+  background-color: #fa6558;
+  color: #fff;
+}
+</style>
