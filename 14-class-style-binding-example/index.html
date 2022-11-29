@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Style Binding</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+</head>
+<body>
+    
+    <div id="app">
+        <h5>Todo List</h5>
+        <input type="text" @keydown.enter="addTodo">
+        <div v-if="todoList.length >0">
+        <ul>
+            <li v-for="todo in todoList" :key="todo">
+                <div>
+                  <input type="checkbox" v-model="todo.completed" >
+                  <label :class="{'computed-item':todo.completed}" for="">{{todo.text}}</label>
+                  <button @click="removeItem(todo)">Delete</button>
+                </div>
+            </li>
+        </ul>
+        <div>
+            <small>Done:{{completedItemCount}}</small>
+            <small>Not Done:{{unCompletedItemCount}}</small>
+        </div>
+    </div>
+    <div v-else>Henuz eklenmiş bir todo bulunmamaktadir.</div>
+        <div><pre>{{todoList}}</pre></div>
+    </div>
+
+
+    <script src="app.js"></script>
+</body>
+</html>

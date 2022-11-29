@@ -1,0 +1,7 @@
+li {
+  list-style: none;
+}
+
+.computed-item {
+  text-decoration: line-through;
+}
