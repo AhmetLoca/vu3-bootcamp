@@ -12,31 +12,16 @@
     <table class="table table-striped table-hover">
       <thead>
         <tr>
-          <th scope="col">#</th>
-          <th scope="col">Title</th>
-          <th scope="col">URL</th>
-          <th scope="col">Description</th>
-          <th scope="col">Delete</th>
+          <th scope="col">#</th><th scope="col">Title</th><th scope="col">URL</th><th scope="col">Description</th><th scope="col">Delete</th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="(bookmark, index) in bookmarkList" :key="bookmark.id">
           <th scope="row">{{ index + 1 }}</th>
           <td>{{ bookmark.title }}</td>
-          <td>
-            <a :href="bookmark.url" target="_blank">{{ bookmark.url }}</a>
-          </td>
-          <td>
-            {{ bookmark.description }}
-          </td>
-          <td>
-            <button
-              @click="deleteBookmark(bookmark)"
-              class="btn btn-sm btn-danger"
-            >
-              Delete
-            </button>
-          </td>
+          <td><a :href="bookmark.url" target="_blank">{{ bookmark.url }}</a></td>
+          <td>{{ bookmark.description }}</td>
+          <td><button @click="deleteBookmark(bookmark)" class="btn btn-sm btn-danger">Delete</button></td>
         </tr>
       </tbody>
     </table>
@@ -77,7 +62,8 @@ export default {
 /* 
 routing ile beraber life cycle hook'unu kullanarak sayfalar arası 
 istek atıp veriyi çekmeyi gördük.
-Hem de axios'u tekrardan görüp 2 farklı şey yaptık. 1. custom acios instance
+Hem de axios'u tekrardan görüp 2 farklı şey yaptık. 
+1. custom axios instance
 2.global olarak axios'un tanımlanması.
 
 */
