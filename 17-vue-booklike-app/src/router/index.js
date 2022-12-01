@@ -16,6 +16,11 @@ const routes = [
     path: "/login",
     component: () => import("@/views/LoginPage.vue"),
   },
+  {
+    name: "NewBookmarkPage",
+    path: "/new",
+    component: () => import("@/views/NewBookmark.vue"),
+  },
 ];
 
 export default createRouter({
