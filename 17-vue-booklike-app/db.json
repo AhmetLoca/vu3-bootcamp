@@ -1,5 +1,30 @@
 {
-    "users" : [],
-    "bookmarks": [],
-    "categories":[]
+  "users": [
+    {
+      "username": null,
+      "fullname": "locaahmet@gmail.com",
+      "password": "U2FsdGVkX1/vW/5+G2gBI0rs7yKBJsDr2OAeFrNSPGE=",
+      "id": 1
+    },
+    {
+      "username": "defnekaygusuz",
+      "fullname": "locaahmet@gmail.com",
+      "password": "U2FsdGVkX1/HnASyuE98GAXztgP+ydwAND7bxATC03o=",
+      "id": 2
+    },
+    {
+      "username": "adasd",
+      "fullname": "locaahmet@gmail.com",
+      "password": "U2FsdGVkX1+DY/i/LDQf8eadJ4KCDXBzbA+fN/XVYUI=",
+      "id": 3
+    },
+    {
+      "username": "asdasd",
+      "fullname": "locaahmet@gmail.com",
+      "password": "U2FsdGVkX18MCTJxYIGR/If4DD0rvvP6zkvOH2eXHQE=",
+      "id": 4
+    }
+  ],
+  "bookmarks": [],
+  "categories": []
 }
